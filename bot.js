@@ -26,21 +26,22 @@ module.exports = class Bot {
                 switch (messageType) {
                     case 'normal': {
 
-                        if (event.hasOwnProperty('bot_id'))
+                        if (event.hasOwnProperty('bot_id')) {
                             return
+                        }
                         console.log(event)
                         console.log(`${event.user} in ${event.channel_type}: ${event.text}`)
 
-                        if (event.text.toLowerCase().includes('kenobi'))
-
+                        if (event.text.toLowerCase().includes('kenobi')) {
                             this.api
                                 .sendMessage({
-                                    channel: event.channel,
-                                    text: 'Hi there!'
+                                    channel: event.channel
+                                    , text: 'Hi there!'
                                 })
                                 .then(res => {
                                     console.log(res)
                                 })
+                        }
                         break
                     }
 

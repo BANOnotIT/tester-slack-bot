@@ -20,10 +20,10 @@ module.exports = class API {
 
 
         return request.post({
-            url: methodURL,
-            form: {
-                token: this.token,
-                query: text
+            url: methodURL
+            , form: {
+                token: this.token
+                , query: text
             }
         })
 
@@ -34,12 +34,12 @@ module.exports = class API {
 
 
         return request.post({
-            url: methodURL,
-            form: {
-                token: this.token,
-                as_user: true,
-                channel,
-                ts
+            url: methodURL
+            , form: {
+                token: this.token
+                , as_user: true
+                , channel
+                , ts
             }
         })
     }
@@ -50,12 +50,12 @@ module.exports = class API {
 
 
         return request.post({
-            url: methodURL,
-            form: {
-                token: this.token,
-                as_user: true,
-                channel,
-                text
+            url: methodURL
+            , form: {
+                token: this.token
+                , as_user: true
+                , channel
+                , text
             }
         })
     }
