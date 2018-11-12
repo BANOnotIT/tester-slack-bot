@@ -24,6 +24,10 @@ module.exports = class Bot {
                 const messageType = event.subtype || 'normal'
 
                 switch (messageType) {
+                    case 'message_changed': {
+                        return this.handleEvent(event.message)
+                    }
+
                     case 'normal': {
 
                         if (event.hasOwnProperty('bot_id')) {
