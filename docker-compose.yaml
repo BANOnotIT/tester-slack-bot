@@ -1,0 +1,12 @@
+version: '3'
+services:
+  server:
+    image: node:11-alpine
+    volumes:
+    - ./:/home/app/
+    working_dir: /home/app/
+    command: npx nodemon index.js
+    env_file:
+    - dev.env
+    ports:
+    - 8080:60
