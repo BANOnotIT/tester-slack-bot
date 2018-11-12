@@ -25,7 +25,7 @@ module.exports = class Bot {
 
                 switch (messageType) {
                     case 'message_changed': {
-                        return this.handleEvent({...event, ...event.message})
+                        return this.handleEvent({channel: event.channel, ...event.message})
                     }
 
                     case 'normal': {
